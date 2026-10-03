@@ -139,27 +139,35 @@ html.no-intro .intro{display:none}
 .panels[data-open="0"]{grid-template-columns:2.6fr 1fr 1fr}
 .panels[data-open="1"]{grid-template-columns:1fr 2.6fr 1fr}
 .panels[data-open="2"]{grid-template-columns:1fr 1fr 2.6fr}
-.panel{position:relative;min-height:470px;overflow:hidden;background:var(--bg);transition:background .5s}
+.panel{position:relative;min-height:580px;overflow:hidden;background:var(--bg);transition:background .5s}
 .panel+.panel{border-left:1px solid var(--line)}
 .panel::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--sx,50%) var(--sy,50%),rgba(226,200,126,.12),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
 .panel:hover::before{opacity:1}
 .panel.is-open{background:var(--bg-2)}
 .panel-btn{position:absolute;inset:0;width:100%;text-align:left;padding:32px;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start}
 .panel-num{font-family:var(--serif);font-size:1.1rem;color:var(--gold-dim);letter-spacing:.2em}
-.panel-title{font-family:var(--serif);font-size:clamp(2rem,3.6vw,3.2rem);color:var(--ink);line-height:1;transition:color .4s}
+.panel-title{font-family:var(--serif);font-size:clamp(1.9rem,2.5vw,2.5rem);color:var(--ink);line-height:1;transition:color .4s,font-size .6s var(--ease)}
+.panel.is-open .panel-title{font-size:clamp(2.4rem,3.8vw,3.6rem)}
 .panel-btn:hover .panel-title,.panel.is-open .panel-title{color:var(--gold)}
 .panel-plus{position:absolute;right:32px;top:32px;width:22px;height:22px;transition:transform .6s var(--ease)}
 .panel-plus::before,.panel-plus::after{content:"";position:absolute;background:var(--gold);left:50%;top:50%}
 .panel-plus::before{width:22px;height:1px;margin:-.5px 0 0 -11px}
 .panel-plus::after{width:1px;height:22px;margin:-11px 0 0 -.5px;transition:transform .5s var(--ease)}
 .panel.is-open .panel-plus::after{transform:scaleY(0)}
-.panel-body{position:absolute;left:32px;right:32px;bottom:92px;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .3s}
+.panel-body{position:absolute;left:32px;right:32px;bottom:112px;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s,transform .3s}
 .panel.is-open .panel-body{opacity:1;transform:none;pointer-events:auto;transition:opacity .6s var(--ease) .25s,transform .6s var(--ease) .25s}
 .panel-inner{max-width:420px}
 .panel-inner p{color:var(--muted);margin-bottom:1.2rem}
 .panel-inner li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);font-size:.95rem}
 .panel-inner li::before{content:"";position:absolute;left:0;top:50%;width:8px;height:1px;background:var(--gold)}
-/* painel fechado: título vertical suave */
+.panel::after{content:attr(data-n);position:absolute;right:-.06em;bottom:-.22em;font-family:var(--serif);font-size:clamp(9rem,17vw,16rem);line-height:1;color:var(--gold);opacity:0;pointer-events:none;transition:opacity .6s,transform .8s var(--ease)}
+.panel.is-open::after{opacity:.07;transform:translateY(-10px)}
+.panel-icon{position:absolute;left:32px;top:76px;color:var(--gold);opacity:.55;transition:opacity .5s,transform .7s var(--ease)}
+.panel:hover .panel-icon,.panel.is-open .panel-icon{opacity:1}
+.panel.is-open .panel-icon{transform:translateY(-2px)}
+.panel-cta{display:inline-flex;align-items:center;gap:10px;margin-top:22px;font-size:.84rem;letter-spacing:.08em;font-weight:600;color:var(--gold);border-bottom:1px solid var(--gold-dim);padding-bottom:4px;transition:gap .4s var(--ease),border-color .3s}
+.panel-cta:hover{gap:16px;border-color:var(--gold)}
+/* painel fechado */
 .panel:not(.is-open) .panel-title{opacity:.9}
 
 /* citação */
@@ -235,7 +243,9 @@ html.no-intro .intro{display:none}
   .about-grid,.faq-grid{grid-template-columns:1fr}
   .panels,.panels[data-open]{grid-template-columns:1fr!important;transition:none}
   .panel{min-height:0;height:96px;transition:height .7s var(--ease),background .5s}
-  .panel.is-open{height:400px}
+  .panel.is-open{height:470px}
+  .panel-icon{display:none}
+  .panel::after{font-size:8rem}
   .panel+.panel{border-left:0;border-top:1px solid var(--line)}
   .panel-btn{flex-direction:row;align-items:center;justify-content:flex-start;gap:20px;padding:0 24px;height:96px;inset:0 0 auto 0}
   .panel-plus{top:37px;right:24px}

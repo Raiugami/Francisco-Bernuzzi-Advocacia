@@ -37,10 +37,11 @@
   }
 
   /* ===== Contatos ===== */
-  var waHref = CONFIG.whatsapp
-    ? 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(CONFIG.mensagem)
-    : '';
+  var waLink = function (msg) {
+    return CONFIG.whatsapp ? 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg) : '';
+  };
   $$('[data-wa]').forEach(function (a) {
+    var waHref = waLink(a.dataset.msg || CONFIG.mensagem);
     if (waHref) { a.href = waHref; a.target = '_blank'; a.rel = 'noopener'; }
     else { a.href = '#contato'; a.removeAttribute('target'); }
   });
