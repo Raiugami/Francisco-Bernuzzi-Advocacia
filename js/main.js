@@ -96,7 +96,7 @@
         }
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['sobre', 'areas', 'atuacao', 'duvidas'].forEach(function (id) { var s = document.getElementById(id); if (s) so.observe(s); });
+    ['topo', 'sobre', 'areas', 'atuacao', 'duvidas'].forEach(function (id) { var s = document.getElementById(id); if (s) so.observe(s); });
   }
 
   /* ===== Entrada ao rolar ===== */
