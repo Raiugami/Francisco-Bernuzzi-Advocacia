@@ -19,18 +19,20 @@
 
   /* ===== Abertura (uma vez por sessão) ===== */
   var intro = $('#intro');
-  var seen = false;
-  try { seen = sessionStorage.getItem('fb-intro') === '1'; } catch (e) {}
-  if (reduce || seen) {
+  if (reduce) {
     root.classList.add('no-intro');
   } else {
     root.style.setProperty('--hd', '2.45s');
     document.body.style.overflow = 'hidden';
-    setTimeout(function () {
+    var closed = false;
+    var closeIntro = function () {
+      if (closed) return;
+      closed = true;
       intro.classList.add('done');
       document.body.style.overflow = '';
-      try { sessionStorage.setItem('fb-intro', '1'); } catch (e) {}
-    }, 2300);
+    };
+    setTimeout(closeIntro, 2300);
+    intro.addEventListener('click', closeIntro);
   }
 
   /* ===== Contatos ===== */

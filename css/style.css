@@ -35,7 +35,7 @@ h2{font-size:clamp(2.2rem,5vw,4rem)}
 .cursor-glow.on{opacity:1}
 
 /* abertura (uma vez por sessão) */
-.intro{position:fixed;inset:0;z-index:300;display:grid;place-items:center;visibility:visible;transition:visibility 0s 1.3s}
+.intro{cursor:pointer;position:fixed;inset:0;z-index:300;display:grid;place-items:center;visibility:visible;transition:visibility 0s 1.3s}
 .intro-half{position:absolute;left:0;right:0;height:50.5%;background:var(--bg);transition:transform 1s cubic-bezier(.76,0,.24,1)}
 .intro-top{top:0}.intro-bot{bottom:0}
 .intro-logo{position:relative;width:min(78vw,440px);transition:opacity .45s,transform .7s var(--ease)}
