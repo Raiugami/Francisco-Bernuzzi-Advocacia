@@ -2,7 +2,7 @@
 
 Site institucional de uma página para o advogado **Francisco Bernuzzi** (cliente: Francisco Bernuzzi), com mais de 30 anos de experiência nas áreas Cível, Comercial e Criminal.
 
-**Site publicado:** https://raiugami.github.io/Francisco-Bernuzzi-Advocacia/
+**Site publicado:** https://franciscobernuzzi.com.br/
 
 ## Descrição
 Página única com abertura animada, hero, escritório, áreas de atuação (painéis interativos), citação com destaque na rolagem, como atuamos (linha do tempo), dúvidas frequentes, contato e botão fixo de WhatsApp. Texto em conformidade com o caráter informativo exigido pela OAB.
