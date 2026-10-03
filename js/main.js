@@ -3,12 +3,12 @@
 
   /* ===== Configuração de contato (preencher quando o cliente enviar os dados) ===== */
   var CONFIG = {
-    whatsapp: '',          // só números, com DDI e DDD. Ex.: '5511999999999'
+    whatsapp: '5511945529277',          // só números, com DDI e DDD. Ex.: '5511999999999'
     mensagem: 'Olá, Dr. Francisco! Gostaria de agendar uma conversa.',
     email: '',
-    telefone: '',
+    telefone: '+55 11 94552-9277',
     endereco: '',
-    oab: ''                // Ex.: 'OAB/UF 00.000'
+    oab: 'OAB/SP 115.442'                // Ex.: 'OAB/UF 00.000'
   };
 
   var root = document.documentElement;
