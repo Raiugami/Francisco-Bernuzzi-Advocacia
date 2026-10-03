@@ -34,12 +34,18 @@ h2{font-size:clamp(2.2rem,5vw,4rem)}
 .cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;background:radial-gradient(circle,rgba(226,200,126,.09),transparent 65%);pointer-events:none;z-index:1;opacity:0;transition:opacity .6s}
 .cursor-glow.on{opacity:1}
 
-/* abertura */
-.intro{position:fixed;inset:0;z-index:300;background:var(--bg);display:grid;place-items:center;align-content:center;gap:22px;transition:opacity .7s var(--ease) .1s,visibility 0s .9s}
-.intro img{width:92px;height:auto;opacity:0;animation:introIn .9s var(--ease) .1s forwards}
-.intro-line{width:120px;height:1px;background:var(--gold);transform:scaleX(0);animation:introLine 1s var(--ease) .3s forwards}
-.intro.done{opacity:0;visibility:hidden;pointer-events:none}
-@keyframes introIn{from{opacity:0;transform:translateY(10px) scale(.96)}to{opacity:1;transform:none}}
+/* abertura (uma vez por sessão) */
+.intro{position:fixed;inset:0;z-index:300;display:grid;place-items:center;visibility:visible;transition:visibility 0s 1.3s}
+.intro-half{position:absolute;left:0;right:0;height:50.5%;background:var(--bg);transition:transform 1s cubic-bezier(.76,0,.24,1)}
+.intro-top{top:0}.intro-bot{bottom:0}
+.intro-logo{position:relative;width:min(78vw,440px);transition:opacity .45s,transform .7s var(--ease)}
+.intro-logo img{width:100%;height:auto;clip-path:inset(0 100% 0 0);animation:logoWipe 1.5s cubic-bezier(.65,0,.35,1) .25s forwards}
+.intro-line{display:block;height:1px;margin-top:22px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);animation:introLine 1.3s var(--ease) .9s forwards}
+.intro.done{pointer-events:none;visibility:hidden}
+.intro.done .intro-top{transform:translateY(-101%)}
+.intro.done .intro-bot{transform:translateY(101%)}
+.intro.done .intro-logo{opacity:0;transform:translateY(-12px)}
+@keyframes logoWipe{to{clip-path:inset(0 0 0 0)}}
 @keyframes introLine{to{transform:scaleX(1)}}
 html.no-intro .intro{display:none}
 

@@ -24,13 +24,13 @@
   if (reduce || seen) {
     root.classList.add('no-intro');
   } else {
-    root.style.setProperty('--hd', '1.15s');
+    root.style.setProperty('--hd', '2.45s');
     document.body.style.overflow = 'hidden';
     setTimeout(function () {
       intro.classList.add('done');
       document.body.style.overflow = '';
       try { sessionStorage.setItem('fb-intro', '1'); } catch (e) {}
-    }, 1250);
+    }, 2300);
   }
 
   /* ===== Contatos ===== */
