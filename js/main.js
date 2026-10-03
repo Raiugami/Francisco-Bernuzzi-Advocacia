@@ -17,7 +17,7 @@
   var $ = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
-  /* ===== Abertura (uma vez por sessão) ===== */
+  /* ===== Abertura (a cada visita; clique pula) ===== */
   var intro = $('#intro');
   if (reduce) {
     root.classList.add('no-intro');
@@ -28,6 +28,7 @@
     var closeIntro = function () {
       if (closed) return;
       closed = true;
+      if (performance.now() < 2200) root.style.setProperty('--hd', '.3s');
       intro.classList.add('done');
       document.body.style.overflow = '';
     };
