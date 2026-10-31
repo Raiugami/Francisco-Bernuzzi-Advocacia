@@ -36,6 +36,32 @@
     intro.addEventListener('click', closeIntro);
   }
 
+
+  /* ===== Aviso de segurança (a cada visita, após a abertura) ===== */
+  (function () {
+    var box = $('#scamAlert'), closeBtn = $('#scamClose');
+    if (!box || !closeBtn) return;
+    var opener = null;
+    var close = function () {
+      box.hidden = true;
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', onKey);
+    };
+    var onKey = function (e) {
+      if (e.key === 'Escape') close();
+      else if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+    };
+    var open = function () {
+      box.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+      document.addEventListener('keydown', onKey);
+    };
+    closeBtn.addEventListener('click', close);
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    setTimeout(open, reduce ? 0 : 2400);
+  })();
+
   /* ===== Contatos ===== */
   var waLink = function (msg) {
     return CONFIG.whatsapp ? 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(msg) : '';
