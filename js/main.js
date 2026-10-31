@@ -49,12 +49,14 @@
     };
     var onKey = function (e) {
       if (e.key === 'Escape') close();
-      else if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+      else if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus({ preventScroll: true }); }
     };
     var open = function () {
       box.hidden = false;
       document.body.style.overflow = 'hidden';
-      closeBtn.focus();
+      var card = $('.alert-box', box);
+      card.scrollTop = 0;
+      card.focus({ preventScroll: true });
       document.addEventListener('keydown', onKey);
     };
     closeBtn.addEventListener('click', close);
