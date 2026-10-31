@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[
     {"@type":"WebSite","@id":"https://franciscobernuzzi.com.br/#site","url":"https://franciscobernuzzi.com.br/","name":"Francisco Bernuzzi Advocacia","alternateName":["Francisco Bernuzzi","Bernuzzi Advocacia e Consultoria Jurídica"],"inLanguage":"pt-BR"},
@@ -42,6 +42,26 @@
     <div class="intro-logo">
       <img src="img/logo.webp" width="547" height="148" alt="">
       <span class="intro-line"></span>
+    </div>
+  </div>
+
+
+  <!-- Aviso de segurança (golpe do falso advogado) -->
+  <div class="alert-overlay" id="scamAlert" role="dialog" aria-modal="true" aria-labelledby="scamTitle" aria-describedby="scamBody" hidden>
+    <div class="alert-box">
+      <h2 id="scamTitle"><span aria-hidden="true">🚨</span> AVISO IMPORTANTE DE SEGURANÇA / GOLPE DO FALSO ADVOGADO</h2>
+      <div id="scamBody">
+        <p><strong>Prezado(a) cliente,</strong></p>
+        <p>Fique atento(a)! Criminosos estão se passando pelo nosso escritório no WhatsApp, utilizando dados reais dos seus processos para tentar aplicar golpes.</p>
+        <ul>
+          <li>Nossos advogados e funcionários NÃO solicitam depósitos antecipados, transferências via Pix ou pagamento de "taxas para liberação de alvarás" ou custas em contas particulares.</li>
+          <li>Desconfie de urgência excessiva ou pedidos para realizar pagamentos imediatos.</li>
+          <li>Sempre confirme a veracidade de qualquer contato ligando diretamente para os canais oficiais do nosso escritório ou falando presencialmente com a nossa equipe.</li>
+          <li>Jamais envie senhas, códigos de verificação ou dados bancários por aplicativo de mensagem.</li>
+        </ul>
+        <p>Em caso de dúvida ou se receber uma abordagem suspeita, não faça nenhum pagamento e entre em contato conosco imediatamente pelos nossos telefones oficiais.</p>
+      </div>
+      <button type="button" class="btn btn-gold" id="scamClose">Li e entendi</button>
     </div>
   </div>
 
@@ -90,12 +110,6 @@
           <li><b>São Paulo</b><span>Santana</span></li>
         </ul>
       </div>
-      <figure class="hero-photo">
-        <div class="photo-frame">
-          <img src="img/francisco.webp" width="840" height="1050" alt="Francisco Bernuzzi, advogado" fetchpriority="high">
-        </div>
-        <figcaption><b>Francisco Bernuzzi</b><span>Advogado · OAB/SP 115.442</span></figcaption>
-      </figure>
       <a class="scroll-cue" href="#sobre" aria-label="Rolar para baixo"><span></span></a>
     </section>
 

@@ -18,5 +18,8 @@ Os dados de contato ficam no objeto `CONFIG` no topo de `js/main.js` (WhatsApp, 
 index.html
 css/style.css
 js/main.js
-img/   logo.webp, monograma.webp, favicon.png, og.png
+img/   logo.webp, monograma.webp, favicon.png, og-quadrado.png
 ```
+
+## Aviso de segurança
+Ao abrir o site, aparece o aviso "Golpe do falso advogado" (modal acessível, fecha com botão, Esc ou clique fora). O site não usa fotografia do advogado, a pedido do cliente.

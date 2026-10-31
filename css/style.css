@@ -82,7 +82,7 @@ html.no-intro .intro{display:none}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:120px 0 90px;overflow:hidden;isolation:isolate}
 .hero-bg{position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 80% at 82% 45%,rgba(13,42,24,.95) 0%,rgba(7,17,10,.7) 45%,transparent 75%),var(--bg)}
 .hero-spot{position:absolute;inset:0;background:radial-gradient(600px circle at var(--mx,70%) var(--my,40%),rgba(226,200,126,.11),transparent 60%)}
-.hero-mark{position:absolute;right:calc(max(24px,calc(50% - 590px)) + min(31vw,410px) - 40px);top:50%;width:min(30vw,420px);height:auto;opacity:.08;-webkit-mask-image:linear-gradient(100deg,transparent 5%,#000 60%);mask-image:linear-gradient(100deg,transparent 5%,#000 60%);transform:translateY(calc(-50% + var(--py,0px)));pointer-events:none}
+.hero-mark{position:absolute;right:max(24px,calc(50% - 590px));top:50%;width:min(34vw,460px);height:auto;opacity:.16;-webkit-mask-image:linear-gradient(100deg,transparent 5%,#000 60%);mask-image:linear-gradient(100deg,transparent 5%,#000 60%);transform:translateY(calc(-50% + var(--py,0px)));pointer-events:none}
 .vline{position:absolute;top:0;bottom:0;width:1px;background:linear-gradient(transparent,var(--line),transparent)}
 .v1{left:8%}.v2{left:50%}.v3{right:8%}
 .hero-inner{position:relative}
@@ -299,3 +299,14 @@ html.no-intro .intro{display:none}
   .quote-text .w{color:var(--ink)}
   .timeline::after{transform:scaleY(1)}
 }
+
+/* Aviso de segurança */
+.alert-overlay{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(3,7,4,.88);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);animation:fadeIn .5s var(--ease)}
+.alert-overlay[hidden]{display:none}
+.alert-box{width:100%;max-width:640px;max-height:calc(100svh - 32px);overflow-y:auto;background:var(--bg-2);border:1px solid var(--gold);border-top-width:3px;padding:clamp(22px,4vw,40px);box-shadow:0 30px 80px -20px rgba(0,0,0,.8)}
+.alert-box h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.25rem,3.6vw,1.7rem);line-height:1.25;color:var(--gold);margin-bottom:1.1rem}
+.alert-box p{margin-bottom:.9rem;font-size:.98rem}
+.alert-box ul{margin:0 0 1rem;padding:0;list-style:none}
+.alert-box li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);font-size:.95rem}
+.alert-box li::before{content:"";position:absolute;left:0;top:1.2em;width:8px;height:1px;background:var(--gold)}
+.alert-box .btn{margin-top:.6rem;cursor:pointer}
