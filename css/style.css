@@ -305,3 +305,4 @@ html.no-intro .intro{display:none}
 .alert-box li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);font-size:.95rem}
 .alert-box li::before{content:"";position:absolute;left:0;top:1.2em;width:8px;height:1px;background:var(--gold)}
 .alert-box .btn{margin-top:.6rem;cursor:pointer}
+.alert-box:focus{outline:none}
